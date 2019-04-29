@@ -13,6 +13,7 @@
 		907C4D8E2276F49D006F2761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907C4D8D2276F49D006F2761 /* Assets.xcassets */; };
 		907C4D912276F49D006F2761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907C4D8F2276F49D006F2761 /* LaunchScreen.storyboard */; };
 		907C4D942276F49D006F2761 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 907C4D932276F49D006F2761 /* main.m */; };
+		907C4D9C2276F780006F2761 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907C4D9B2276F780006F2761 /* Mapbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		907C4D902276F49D006F2761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		907C4D922276F49D006F2761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		907C4D932276F49D006F2761 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		907C4D9B2276F780006F2761 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = Carthage/Build/iOS/Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907C4D9C2276F780006F2761 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				907C4D832276F49C006F2761 /* MapboxPerspectiveBug */,
 				907C4D822276F49C006F2761 /* Products */,
+				907C4D9A2276F780006F2761 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +75,14 @@
 			path = MapboxPerspectiveBug;
 			sourceTree = "<group>";
 		};
+		907C4D9A2276F780006F2761 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				907C4D9B2276F780006F2761 /* Mapbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -81,6 +93,7 @@
 				907C4D7D2276F49C006F2761 /* Sources */,
 				907C4D7E2276F49C006F2761 /* Frameworks */,
 				907C4D7F2276F49C006F2761 /* Resources */,
+				907C4D9D2276F796006F2761 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -135,6 +148,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		907C4D9D2276F796006F2761 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Mapbox.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Mapbox.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		907C4D7D2276F49C006F2761 /* Sources */ = {
@@ -287,6 +322,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 392TBKM22S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MapboxPerspectiveBug/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,6 +343,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 392TBKM22S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MapboxPerspectiveBug/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
